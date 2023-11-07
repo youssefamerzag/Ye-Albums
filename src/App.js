@@ -3,32 +3,48 @@ import './App.css';
 import donda from './imgs/donda.jpg'
 import Yeezus from './imgs/Yeezus.jpg'
 import Graduation from './imgs/Graduation.jpg'
-import { useState } from 'react';
+
+import NoChildLeftBehind from './songs/Kanye West - Bound 2.mp3'
+import Cometolife from './songs/Kanye West - Come to Life.mp3'
+import jail from './songs/Kanye West - Jail.mp3'
+
+import IWonder from './songs/Kanye West - I Wonder.mp3'
+import Stronger from './songs/Kanye West - Stronger.mp3'
+import GoodLife from './songs/Kanye West - Good Life.mp3'
+
+import Bound2 from './songs/Kanye West - Bound 2.mp3'
+import Onsight from './songs/Kanye West - On Sight.mp3'
+import NewSlaves from './songs/Kanye West - New Slaves.mp3'
+
+import { useRef, useState } from 'react';
+import useSound from 'use-sound';
 
 function App() {
   const albums = [
     {album : 'donda', 
     img : donda,
     songs : [
-      {song : 'No Child Left Behind' , time : '2:58' },
-      {song : 'Come to Life' , time : '5:10' },
-      {song : 'Jail' , time : '4,57' }
+      {song : 'No Child Left Behind' , time : '2:58' , playSound : NoChildLeftBehind},
+      {song : 'Come to Life' , time : '5:10' ,playSound : Cometolife},
+      {song : 'Jail' , time : '4,57' , playSound : jail }
     ]},
     {album : 'Graduation', 
     img : Graduation,
     songs : [
-      {song : 'I Wonder' , time : '2:39' , },
-      {song : 'Stronger' , time : '2:39' , },
-      {song : 'Good Life' , time : '2:39' , }
+      {song : 'I Wonder' , time : '2:39' , playSound : IWonder},
+      {song : 'Stronger' , time : '2:39' , playSound : Stronger},
+      {song : 'Good Life' , time : '2:39' , playSound : GoodLife}
     ]},
     {album : 'Yeezus', 
     img : Yeezus,
     songs : [
-      {song : 'Bound 2' , time : '2:39' , },
-      {song : 'On Sight' , time : '2:39' , },
-      {song : 'New Slaves' , time : '2:39' , }
+      {song : 'Bound 2' , time : '2:39' , playSound : Bound2},
+      {song : 'On Sight' , time : '2:39' , playSound : Onsight},
+      {song : 'New Slaves' , time : '2:39' , playSound : NewSlaves}
     ]}
   ]
+
+
 
 
 
@@ -53,22 +69,35 @@ function App() {
 
   }
 
+  const audioRef = useRef([]);
+
+  const handleAudio = (index) => {
+    audioRef.current[index].play();
+  };
+
 
   return (
     <div className="App">
 
-      <div id='albums'>
+      <div id='albums'>      
         <button id='abutton' onClick={left}>left</button>
-        {albums.slice(albumnb1, albumnb2).map((albumimg , index) => (<img  id='albumimg' key={index} src={albumimg.img} alt={albumimg.album}></img>))}
+
+        {albums.slice(albumnb1, albumnb2).map((albumimg , index) => 
+        (<img  id='albumimg' key={index} src={albumimg.img} alt={albumimg.album}>
+        </img>))}
+
         <button id='abutton' onClick={right}>right</button>
       </div>
 
       <div id='songs'>
         <ul>
-          {albums[0].songs.map((albumsongs , index) => <li key={index}>{albumsongs.time} / {albumsongs.song}</li>)}
+          {albums[albumnb1].songs.map((albumsongs , index) =>
+            <li key={index}>{albumsongs.time} / {albumsongs.song} 
+            <button onClick={() => handleAudio(index)} className="drum-pad" id={albumsongs.song}>play</button>
+            <audio ref={(audio) => audioRef.current.push(audio)} src={albumsongs.playSound} />
+            </li>)}
         </ul>
       </div>
-
     </div>
   );
 }
