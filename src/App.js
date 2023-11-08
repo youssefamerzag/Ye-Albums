@@ -88,22 +88,22 @@ function App() {
 
   return (
     <div className="App">
-
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
       <div id='albums'>      
-        <button id='abutton' onClick={left}>left</button>
+        <button id='abutton' onClick={left}><i class="fa fa-angle-double-left" style={{"font-size":"30px"}}></i></button>
 
         {albums.slice(albumnb1, albumnb2).map((albumimg , index) => 
         (<img  id='albumimg' key={index} src={albumimg.img} alt={albumimg.album}>
         </img>))}
 
-        <button id='abutton' onClick={right}>right</button>
+        <button id='abutton' onClick={right}><i class="fa fa-angle-double-right" style={{"font-size":"30px"}}></i></button>
       </div>
 
       <div id='songs'>
         <ul>
           {albums[albumnb1].songs.map((albumsongs , index) =>
             <li key={index}>
-              <button onClick={() => handleAudio(index)} className="drum-pad" id={albumsongs.song}>play</button>  
+              <button className='playbutton' onClick={() => handleAudio(index)}  id={albumsongs.song}><i class="fa fa-play" style={{"font-size":"20px"}}></i></button>  
               {albumsongs.song} 
             <audio ref={(audio) => audioRef.current.push(audio)} src={albumsongs.playSound} />
             </li>)}
