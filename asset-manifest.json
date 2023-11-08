@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Ye-Albums/static/css/main.0a68fcb9.css",
-    "main.js": "/Ye-Albums/static/js/main.c12153df.js",
+    "main.css": "/Ye-Albums/static/css/main.912e44d7.css",
+    "main.js": "/Ye-Albums/static/js/main.e119a553.js",
     "static/media/Kanye West - Stronger.mp3": "/Ye-Albums/static/media/Kanye West - Stronger.49a2123620228f652bb4.mp3",
     "static/media/Kanye West - Come to Life.mp3": "/Ye-Albums/static/media/Kanye West - Come to Life.cb204930a6c8caf56cf3.mp3",
     "static/media/Kanye West - Jail.mp3": "/Ye-Albums/static/media/Kanye West - Jail.3d3a56c28552f7f9afe3.mp3",
@@ -15,11 +15,11 @@
     "static/media/Graduation.jpg": "/Ye-Albums/static/media/Graduation.24eb12d87a5f8336fd41.jpg",
     "static/media/Yeezus.jpg": "/Ye-Albums/static/media/Yeezus.c23a807c2471d5eb4bc3.jpg",
     "index.html": "/Ye-Albums/index.html",
-    "main.0a68fcb9.css.map": "/Ye-Albums/static/css/main.0a68fcb9.css.map",
-    "main.c12153df.js.map": "/Ye-Albums/static/js/main.c12153df.js.map"
+    "main.912e44d7.css.map": "/Ye-Albums/static/css/main.912e44d7.css.map",
+    "main.e119a553.js.map": "/Ye-Albums/static/js/main.e119a553.js.map"
   },
   "entrypoints": [
-    "static/css/main.0a68fcb9.css",
-    "static/js/main.c12153df.js"
+    "static/css/main.912e44d7.css",
+    "static/js/main.e119a553.js"
   ]
 }
