@@ -19,8 +19,9 @@ import NewSlaves from './songs/Kanye West - New Slaves.mp3'
 import { useRef, useState } from 'react';
 
 function App() {
-  const albums = [
-    {album : 'donda', 
+  const albums =  [
+    {
+      album : 'donda', 
     img : donda,
     songs : [
       {song : 'No Child Left Behind' , time : '2:58' , playSound : NoChildLeftBehind},
@@ -46,19 +47,31 @@ function App() {
 
 
 
-
+  //numbers of slice for the table data
   const [albumnb1 , setalbumnb1] = useState(0)
   const [albumnb2 , setalbumnb2] = useState(1)
 
+
+  //right button click function
   function right() {
     const next1 = albumnb1 + 1
     const next2 = albumnb2 + 1
 
     setalbumnb1(next1)
     setalbumnb2(next2)
-    
+
+    console.log(albumnb1, albumnb2)
+
+    if(albumnb1 === 2) {
+      const loop1 = 0
+      const loop2 = 1
+      setalbumnb1(loop1)
+      setalbumnb2(loop2)
+    }
+
   }
 
+  //left button click function
   function left() {
     const next1 = albumnb1 - 1
     const next2 = albumnb2 - 1
@@ -66,10 +79,21 @@ function App() {
     setalbumnb1(next1)
     setalbumnb2(next2)
 
+    console.log(albumnb1, albumnb2)
+
+    // albums in loop
+    if(albumnb1 === 0) {
+      const loop1 = 2
+      const loop2 = 3
+      setalbumnb1(loop1)
+      setalbumnb2(loop2)
+    }
+
   }
 
 
 
+  // play and automotically pause if you play another song 
   const [currentaudioindex , setcurrentaudioindex] = useState(null)
 
   const audioRef = useRef([]);
@@ -92,20 +116,20 @@ function App() {
     <div className="App">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
       <div id='albums'>      
-        <button id='abutton' onClick={left}><i class="fa fa-angle-double-left" style={{"font-size":"30px"}}></i></button>
+        <button id='abutton' onClick={left}><i className="fa fa-angle-double-left" style={{"fontSize":"30px"}}></i></button>
 
         {albums.slice(albumnb1, albumnb2).map((albumimg , index) => 
         (<img  id='albumimg' key={index} src={albumimg.img} alt={albumimg.album}>
         </img>))}
 
-        <button id='abutton' onClick={right}><i class="fa fa-angle-double-right" style={{"font-size":"30px"}}></i></button>
+        <button id='abutton' onClick={right}><i className="fa fa-angle-double-right" style={{"fontSize":"30px"}}></i></button>
       </div>
 
       <div id='songs'>
         <ul>
           {albums[albumnb1].songs.map((albumsongs , index) =>
             <li key={index}>
-              <button className='playbutton' onClick={() => handleAudio(index)}  id={albumsongs.song}><i class="fa fa-play" style={{"font-size":"20px"}}></i></button>  
+              <button className='playbutton' onClick={() => handleAudio(index)}  id={albumsongs.song}><i className="fa fa-play" style={{"fontSize":"20px"}}></i></button>  
               {albumsongs.song} 
             <audio ref={(audio) => audioRef.current.push(audio)} src={albumsongs.playSound} />
             </li>)}
