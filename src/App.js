@@ -21,7 +21,7 @@ import { useRef, useState } from 'react';
 function App() {
   const albums =  [
     {
-      album : 'donda', 
+      album : 'Donda', 
       img : donda,
     songs : [
       {song : 'No Child Left Behind',img : donda , time : '2:58' , playSound : NoChildLeftBehind},
@@ -132,18 +132,21 @@ function App() {
         <button id='abutton' onClick={left}><i className="fa fa-angle-double-left" style={{"fontSize":"30px"}}></i></button>
 
         {albums.slice(albumnb1, albumnb2).map((albumimg , index) => 
-        (<img  id='albumimg' key={index} src={albumimg.img} alt={albumimg.album}>
-        </img>))}
+        (<div><img  id='albumimg' key={index} src={albumimg.img} alt={albumimg.album}>
+        </img>
+        </div>))}
 
         <button id='abutton' onClick={right}><i className="fa fa-angle-double-right" style={{"fontSize":"30px"}}></i></button>
       </div>
+
+      <p id='albumtitle'>{albums[albumnb1].album}</p>
 
       <div id='songs'>
         <ul>
           {albums[albumnb1].songs.map((albumsongs , index) =>
             <li key={index}>
               <img src={albumsongs.img} alt='smallcover' id='smallcover'></img>
-              <button className='playbutton' onClick={() => handleAudio(index)}  id={albumsongs.song}><i className="fa fa-play" style={{"fontSize":"20px"}}></i></button>  
+              <button className='playbutton' onClick={() => handleAudio(index)} ><i className="fa fa-play" style={{"fontSize":"20px"}}></i></button>  
               <p>{albumsongs.song}</p> 
             <audio ref={(audio) => audioRef.current.push(audio)} src={albumsongs.playSound} />
             </li>)}

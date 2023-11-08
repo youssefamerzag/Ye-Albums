@@ -16,7 +16,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     width: 58%;
 }
 
@@ -30,6 +30,7 @@ body {
 #songs ul {
     list-style: none;
     margin-right: 30px;
+    margin-bottom: 20px;
 }
 
 #songs li{
@@ -41,6 +42,19 @@ body {
     background-color: #231e79;
     color: aliceblue;
     font-size: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#songs li p {
+    padding-left: 10px;
+    display: block;
+
+}
+
+#albumtitle {
+    font-size: 30px;
+    text-align: center;
+    color:  aliceblue;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -99,7 +113,7 @@ body {
 
     #albums {
         margin-left: 10px;
-        margin-bottom: 50px;
+        margin-bottom: 10px;
         width: 100%;
     }
 
