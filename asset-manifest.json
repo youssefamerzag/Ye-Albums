@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Ye-Albums/static/css/main.f4b4f886.css",
-    "main.js": "/Ye-Albums/static/js/main.5338c11c.js",
+    "main.js": "/Ye-Albums/static/js/main.04cd875d.js",
     "static/media/Kanye West - Stronger.mp3": "/Ye-Albums/static/media/Kanye West - Stronger.49a2123620228f652bb4.mp3",
     "static/media/Kanye West - Come to Life.mp3": "/Ye-Albums/static/media/Kanye West - Come to Life.cb204930a6c8caf56cf3.mp3",
     "static/media/Kanye West - Jail.mp3": "/Ye-Albums/static/media/Kanye West - Jail.3d3a56c28552f7f9afe3.mp3",
@@ -16,10 +16,10 @@
     "static/media/Yeezus.jpg": "/Ye-Albums/static/media/Yeezus.c23a807c2471d5eb4bc3.jpg",
     "index.html": "/Ye-Albums/index.html",
     "main.f4b4f886.css.map": "/Ye-Albums/static/css/main.f4b4f886.css.map",
-    "main.5338c11c.js.map": "/Ye-Albums/static/js/main.5338c11c.js.map"
+    "main.04cd875d.js.map": "/Ye-Albums/static/js/main.04cd875d.js.map"
   },
   "entrypoints": [
     "static/css/main.f4b4f886.css",
-    "static/js/main.5338c11c.js"
+    "static/js/main.04cd875d.js"
   ]
 }
