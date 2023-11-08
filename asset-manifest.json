@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Ye-Albums/static/css/main.1dff3e05.css",
+    "main.js": "/Ye-Albums/static/js/main.ad259f50.js",
+    "static/media/Kanye West - Stronger.mp3": "/Ye-Albums/static/media/Kanye West - Stronger.49a2123620228f652bb4.mp3",
+    "static/media/Kanye West - Come to Life.mp3": "/Ye-Albums/static/media/Kanye West - Come to Life.cb204930a6c8caf56cf3.mp3",
+    "static/media/Kanye West - Jail.mp3": "/Ye-Albums/static/media/Kanye West - Jail.3d3a56c28552f7f9afe3.mp3",
+    "static/media/Kanye West - New Slaves.mp3": "/Ye-Albums/static/media/Kanye West - New Slaves.edccece92196e3d8b088.mp3",
+    "static/media/Kanye West - I Wonder.mp3": "/Ye-Albums/static/media/Kanye West - I Wonder.c7e601e67e6120bf773b.mp3",
+    "static/media/Kanye West - Bound 2.mp3": "/Ye-Albums/static/media/Kanye West - Bound 2.9b94bbef7cbfe56df769.mp3",
+    "static/media/Kanye West - Good Life.mp3": "/Ye-Albums/static/media/Kanye West - Good Life.f659b8915ef918039257.mp3",
+    "static/media/Kanye West - No Child Left Behind.mp3": "/Ye-Albums/static/media/Kanye West - No Child Left Behind.f401b5108162e55642dc.mp3",
+    "static/media/Kanye West - On Sight.mp3": "/Ye-Albums/static/media/Kanye West - On Sight.216825ed4a88f8dcb8e1.mp3",
+    "static/media/donda.jpg": "/Ye-Albums/static/media/donda.4f84ca17211cf358c172.jpg",
+    "static/media/Graduation.jpg": "/Ye-Albums/static/media/Graduation.24eb12d87a5f8336fd41.jpg",
+    "static/media/Yeezus.jpg": "/Ye-Albums/static/media/Yeezus.c23a807c2471d5eb4bc3.jpg",
+    "index.html": "/Ye-Albums/index.html",
+    "main.1dff3e05.css.map": "/Ye-Albums/static/css/main.1dff3e05.css.map",
+    "main.ad259f50.js.map": "/Ye-Albums/static/js/main.ad259f50.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1dff3e05.css",
+    "static/js/main.ad259f50.js"
+  ]
+}
