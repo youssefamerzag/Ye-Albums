@@ -22,25 +22,25 @@ function App() {
   const albums =  [
     {
       album : 'donda', 
-    img : donda,
+      img : donda,
     songs : [
-      {song : 'No Child Left Behind' , time : '2:58' , playSound : NoChildLeftBehind},
-      {song : 'Come to Life' , time : '5:10' ,playSound : Cometolife},
-      {song : 'Jail' , time : '4,57' , playSound : jail }
+      {song : 'No Child Left Behind',img : donda , time : '2:58' , playSound : NoChildLeftBehind},
+      {song : 'Come to Life' ,img : donda, time : '5:10' ,playSound : Cometolife},
+      {song : 'Jail' ,img : donda, time : '4,57' , playSound : jail }
     ]},
     {album : 'Graduation', 
     img : Graduation,
     songs : [
-      {song : 'I Wonder' , time : '2:39' , playSound : IWonder},
-      {song : 'Stronger' , time : '2:39' , playSound : Stronger},
-      {song : 'Good Life' , time : '2:39' , playSound : GoodLife}
+      {song : 'I Wonder' ,img : Graduation, time : '2:39' , playSound : IWonder},
+      {song : 'Stronger' ,img : Graduation, time : '2:39' , playSound : Stronger},
+      {song : 'Good Life' ,img : Graduation, time : '2:39' , playSound : GoodLife}
     ]},
     {album : 'Yeezus', 
     img : Yeezus,
     songs : [
-      {song : 'Bound 2' , time : '2:39' , playSound : Bound2},
-      {song : 'On Sight' , time : '2:39' , playSound : Onsight},
-      {song : 'New Slaves' , time : '2:39' , playSound : NewSlaves}
+      {song : 'Bound 2' ,img : Yeezus, time : '2:39' , playSound : Bound2},
+      {song : 'On Sight' ,img : Yeezus, time : '2:39' , playSound : Onsight},
+      {song : 'New Slaves' ,img : Yeezus, time : '2:39' , playSound : NewSlaves}
     ]}
   ]
 
@@ -100,14 +100,26 @@ function App() {
 
 
   const handleAudio = (index) => {
+    
 
-    if(currentaudioindex !== null ){
+    if (currentaudioindex !== null ) {
       audioRef.current[currentaudioindex].pause()
-      audioRef.current[currentaudioindex].currentTime = 0
+      audioRef.current[index].currentTime = 0;
     }
 
-    audioRef.current[index].play() ;
-    setcurrentaudioindex(index)
+    if(currentaudioindex !== null ){
+      if (audioRef.current[index].played) {
+        audioRef.current[index].pause();
+        audioRef.current[index].currentTime = 0;
+        setcurrentaudioindex(null)} 
+    }else {
+      audioRef.current[index].play() ;
+      setcurrentaudioindex(index)
+    }
+
+
+
+
   };
 
 
@@ -115,7 +127,8 @@ function App() {
   return (
     <div className="App">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
-      <div id='albums'>      
+      <p id='title'>Kanye West's Albums</p>   
+      <div id='albums'>   
         <button id='abutton' onClick={left}><i className="fa fa-angle-double-left" style={{"fontSize":"30px"}}></i></button>
 
         {albums.slice(albumnb1, albumnb2).map((albumimg , index) => 
@@ -129,8 +142,9 @@ function App() {
         <ul>
           {albums[albumnb1].songs.map((albumsongs , index) =>
             <li key={index}>
+              <img src={albumsongs.img} alt='smallcover' id='smallcover'></img>
               <button className='playbutton' onClick={() => handleAudio(index)}  id={albumsongs.song}><i className="fa fa-play" style={{"fontSize":"20px"}}></i></button>  
-              {albumsongs.song} 
+              <p>{albumsongs.song}</p> 
             <audio ref={(audio) => audioRef.current.push(audio)} src={albumsongs.playSound} />
             </li>)}
         </ul>
