@@ -4,7 +4,7 @@ import donda from './imgs/donda.jpg'
 import Yeezus from './imgs/Yeezus.jpg'
 import Graduation from './imgs/Graduation.jpg'
 
-import NoChildLeftBehind from './songs/Kanye West - Bound 2.mp3'
+import NoChildLeftBehind from './songs/Kanye West - No Child Left Behind.mp3'
 import Cometolife from './songs/Kanye West - Come to Life.mp3'
 import jail from './songs/Kanye West - Jail.mp3'
 
@@ -17,7 +17,6 @@ import Onsight from './songs/Kanye West - On Sight.mp3'
 import NewSlaves from './songs/Kanye West - New Slaves.mp3'
 
 import { useRef, useState } from 'react';
-import useSound from 'use-sound';
 
 function App() {
   const albums = [
@@ -69,11 +68,22 @@ function App() {
 
   }
 
+  const [currentaudioindex , setcurrentaudioindex] = useState(null)
+
   const audioRef = useRef([]);
 
+
   const handleAudio = (index) => {
-    audioRef.current[index].play();
+
+    if(currentaudioindex !== null ){
+      audioRef.current[currentaudioindex].pause()
+      audioRef.current[currentaudioindex].currentTime = 0
+    }
+
+    audioRef.current[index].play() ;
+    setcurrentaudioindex(index)
   };
+
 
 
   return (
@@ -92,8 +102,9 @@ function App() {
       <div id='songs'>
         <ul>
           {albums[albumnb1].songs.map((albumsongs , index) =>
-            <li key={index}>{albumsongs.time} / {albumsongs.song} 
-            <button onClick={() => handleAudio(index)} className="drum-pad" id={albumsongs.song}>play</button>
+            <li key={index}>
+              <button onClick={() => handleAudio(index)} className="drum-pad" id={albumsongs.song}>play</button>  
+              {albumsongs.song} 
             <audio ref={(audio) => audioRef.current.push(audio)} src={albumsongs.playSound} />
             </li>)}
         </ul>
