@@ -68,7 +68,7 @@ function App() {
 
   }
 
-  
+
 
   const [currentaudioindex , setcurrentaudioindex] = useState(null)
 
@@ -111,6 +111,7 @@ function App() {
             </li>)}
         </ul>
       </div>
+      <li  id='youssef'>Copyright ©<a href='https://github.com/youssefamerzag'>Youssef Amerzag</a></li>
     </div>
   );
 }
