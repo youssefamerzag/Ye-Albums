@@ -19,6 +19,9 @@ import NewSlaves from './songs/Kanye West - New Slaves.mp3'
 import { useRef, useState } from 'react';
 
 function App() {
+  
+  // const mySong = albums[albumnb1].songs.map(() => {useRef(null)})
+
   const albums =  [
     {
       album : 'Donda', 
@@ -116,10 +119,6 @@ function App() {
       audioRef.current[index].play() ;
       setcurrentaudioindex(index)
     }
-
-
-
-
   };
 
 
