@@ -5,7 +5,7 @@ body {
 #title {
     font-size: 39px;
     text-align: center;
-    color:  aliceblue;
+    color: aliceblue;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -33,7 +33,7 @@ body {
     margin-bottom: 20px;
 }
 
-#songs li{
+#songs li {
     display: flex;
     justify-content: left;
     border-radius: 15px;
@@ -54,7 +54,7 @@ body {
 #albumtitle {
     font-size: 30px;
     text-align: center;
-    color:  aliceblue;
+    color: aliceblue;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -76,13 +76,17 @@ body {
 
 
 .playbutton {
-    padding: 17px 22px 17px 22px;
+    width: 50px;
+    height: 50px;
     background-color: rgb(181, 23, 23);
     color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-right: 20px;
     border: none;
-    border-radius: 50px;
-    transition: 0.2s;
+    border-radius: 50%;
+    transition: .2s;
 }
 
 .playbutton:hover {
@@ -109,6 +113,7 @@ body {
     margin-right: 20px;
 }
 
+
 @media only screen and (max-width: 1400px) {
 
     #albums {
@@ -132,7 +137,7 @@ body {
         margin-right: 0px;
     }
 
-    #songs li{
+    #songs li {
         border-radius: 15px;
         padding: 20px;
         margin-bottom: 10px;
@@ -149,4 +154,4 @@ body {
         margin-right: 10px;
     }
 
-  }
+}
